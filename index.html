@@ -9,16 +9,6 @@
 
   <style>
 
-    /* 🔥 FIX LỖI GITHUB PAGES TỰ CHUYỂN DARK MODE */
-    :root {
-      color-scheme: light !important;
-    }
-
-    /* 🔥 Chữ mặc định không bị trắng */
-    body {
-      color: #2a1a00 !important;
-    }
-
     :root{
       --text-dark:#2a1f0f;
       --rope:#d1a55c;
@@ -31,8 +21,9 @@
     body{
       font-family:Inter, sans-serif;
       background: url('nen.jpg') no-repeat center/cover;
+      color:#fff;
       line-height:1.6;
-      font-weight:600;
+      font-weight:600; 
     }
 
     .overlay{
@@ -55,7 +46,7 @@
       align-items:center;
     }
 
-    /* AVATAR 3D */
+    /* AVATAR */
     .avatar{
       width:150px;
       height:190px;
@@ -212,6 +203,13 @@
     .music-btn:hover{
       background:#ffe7a8;
       transform:scale(1.07);
+    }
+
+    /* 🎯 CHỈ FIX CHỮ BỊ MỜ TRONG CARD */
+    .card p,
+    .card .section-title {
+      color: #2a1a00 !important;
+      text-shadow: none !important;
     }
 
   </style>
