@@ -5,22 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Giới thiệu bản thân – One Piece Style</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --text-dark:#3b2f1f;
+      --text-dark:#2a1f0f;
       --rope:#d1a55c;
+      --strong-text:#1a1205;
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
 
-    /* ẢNH NỀN CHÍNH */
+    /* NỀN CHÍNH */
     body{
       font-family:Inter, sans-serif;
       background: url('nen.jpg') no-repeat center/cover;
       color:#fff;
       line-height:1.6;
+      font-weight:600; /* tăng độ dày chữ */
     }
 
     .overlay{
@@ -43,52 +45,44 @@
       align-items:center;
     }
 
-    /* ==== AVATAR 3D ==== */
-    .avatar-3d{
-      width:140px;
-      height:180px;
+    /* AVATAR 3D */
+    .avatar{
+      width:150px;
+      height:190px;
       border:4px solid #b88a4a;
-      border-radius:10px;
+      border-radius:14px;
       overflow:hidden;
       background:#fff;
-      box-shadow:0 0 25px rgba(0,0,0,0.55);
-      transition:0.3s ease;
       transform-style:preserve-3d;
+      transition:0.25s;
+      perspective:800px;
       cursor:pointer;
+      box-shadow:0 0 25px rgba(0,0,0,0.55);
     }
 
-    .avatar-3d img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      transition:0.3s ease;
+    .avatar:hover{
+      transform:rotateY(12deg) rotateX(8deg) scale(1.05);
     }
 
-    /* Hiệu ứng nghiêng khi hover */
-    .avatar-3d:hover{
-      transform:rotateY(12deg) rotateX(6deg) scale(1.06);
-      box-shadow:0 0 35px rgba(255,215,120,0.7);
+    .avatar img{
+      width:100%;height:100%;object-fit:cover;
     }
-
-    .avatar-3d:hover img{
-      transform:scale(1.12);
-      filter:brightness(1.12);
-    }
-    /* =================== */
 
     h1{
       font-family:"Pirata One";
-      font-size:42px;
+      font-size:46px;
       color:#ffdd73;
       letter-spacing:2px;
-      text-shadow:0 0 8px rgba(0,0,0,1);
+      font-weight:900;
+      text-shadow:0 0 8px #000;
     }
 
     .subtitle{
-      opacity:0.95;
-      font-size:15px;
-      font-weight:600;
-      text-shadow:0 0 6px rgba(0,0,0,1);
+      opacity:1;
+      font-size:16px;
+      font-weight:700;
+      color:#ffeec5;
+      text-shadow:0 0 5px #000;
     }
 
     nav{
@@ -105,13 +99,13 @@
       color:#3b2f1f;
       text-decoration:none;
       border:2px solid #d7b15c;
-      font-weight:700;
+      font-weight:800;
       transition:0.2s;
     }
 
     .btn:hover{
       background:#ffe9a6;
-      transform:scale(1.05);
+      transform:scale(1.07);
     }
 
     .primary{
@@ -119,7 +113,7 @@
       color:#402c00;
     }
 
-    /* Main layout */
+    /* Layout */
     main{
       margin-top:28px;
       display:grid;
@@ -127,28 +121,31 @@
       gap:24px;
     }
 
-    /* TẤT CẢ CARD DÙNG phong.jpg */
+    /* CARD + PHÔNG nền phong.jpg */
     .card{
       background:url('phong.jpg') center/cover;
       padding:20px;
       border-radius:12px;
       border:4px solid var(--rope);
-      color:var(--text-dark);
-      box-shadow:0 0 14px rgba(0,0,0,0.45);
+      color:var(--strong-text);
+      font-weight:700;
+      text-shadow:0 0 4px rgba(255,255,255,0.4);
+      box-shadow:0 0 14px rgba(0,0,0,0.55);
     }
 
     .section-title{
       font-family:"Pirata One";
-      font-size:28px;
+      font-size:30px;
       margin-bottom:8px;
       color:#2e1b00;
-      text-shadow:0 0 6px rgba(255,255,255,0.6);
+      font-weight:900;
+      text-shadow:0 0 5px #fff;
     }
 
     .about p{
       margin-bottom:10px;
-      font-weight:600;
-      color:#2b1a05;
+      font-weight:700;
+      color:#2a1a00;
     }
 
     .skills{
@@ -163,13 +160,13 @@
       border-radius:999px;
       border:2px solid #c9a75a;
       font-size:14px;
-      font-weight:600;
+      font-weight:800;
       color:#3b2f1f;
     }
 
     .link{
       color:#003a8c;
-      font-weight:700;
+      font-weight:800;
       text-decoration:none;
     }
     .link:hover{ text-decoration:underline; }
@@ -178,11 +175,14 @@
       text-align:center;
       margin-top:25px;
       color:#f7e7b1;
+      font-weight:700;
+      text-shadow:0 0 5px #000;
     }
 
+    /* Responsive */
     @media(max-width:900px){
       main{grid-template-columns:1fr}
-      .avatar-3d{width:110px;height:150px}
+      .avatar{width:120px;height:160px}
     }
 
     /* Nút nhạc */
@@ -191,17 +191,19 @@
       border:3px solid #cfa142;
       padding:6px 12px;
       border-radius:8px;
-      font-weight:700;
+      font-weight:800;
       color:#3b2f1f;
       cursor:pointer;
       transition:0.2s;
       font-size:18px;
+      text-shadow:none;
     }
 
     .music-btn:hover{
       background:#ffe7a8;
       transform:scale(1.07);
     }
+
   </style>
 </head>
 
@@ -210,8 +212,7 @@
     <div class="container">
 
       <header>
-        <!-- Avatar 3D -->
-        <div class="avatar-3d">
+        <div class="avatar">
           <img src="anh.jpg" alt="Avatar">
         </div>
 
@@ -221,7 +222,7 @@
             <button id="musicBtn" class="music-btn">🎵 One Piece</button>
           </h1>
 
-          <div class="subtitle">Duc Tri – One Piece </div>
+          <div class="subtitle">Học sinh – One Piece Fan</div>
 
           <nav>
             <a class="btn" href="#about">Giới thiệu</a>
@@ -295,24 +296,6 @@
         btn.textContent = "🎶 One Piece";
         isPlaying = true;
       }
-    });
-
-    /* Avatar 3D Follow Mouse */
-    const avatar = document.querySelector(".avatar-3d");
-
-    avatar.addEventListener("mousemove", (e) => {
-      const rect = avatar.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const rotateY = (x / rect.width - 0.5) * 20;
-      const rotateX = -(y / rect.height - 0.5) * 20;
-
-      avatar.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.06)`;
-    });
-
-    avatar.addEventListener("mouseleave", () => {
-      avatar.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
     });
   </script>
 
