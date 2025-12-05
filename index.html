@@ -8,6 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
+
+    /* 🔥 FIX LỖI GITHUB PAGES TỰ CHUYỂN DARK MODE */
+    :root {
+      color-scheme: light !important;
+    }
+
+    /* 🔥 Chữ mặc định không bị trắng */
+    body {
+      color: #2a1a00 !important;
+    }
+
     :root{
       --text-dark:#2a1f0f;
       --rope:#d1a55c;
@@ -20,9 +31,8 @@
     body{
       font-family:Inter, sans-serif;
       background: url('nen.jpg') no-repeat center/cover;
-      color:#fff;
       line-height:1.6;
-      font-weight:600; /* tăng độ dày chữ */
+      font-weight:600;
     }
 
     .overlay{
@@ -121,7 +131,7 @@
       gap:24px;
     }
 
-    /* CARD + PHÔNG nền phong.jpg */
+    /* CARD */
     .card{
       background:url('phong.jpg') center/cover;
       padding:20px;
