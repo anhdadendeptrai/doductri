@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Giới thiệu bản thân – One Piece Style</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --text-dark:#3b2f1f;
+      --rope:#d1a55c;
+    }
+
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    /* ẢNH NỀN CHÍNH */
+    body{
+      font-family:Inter, sans-serif;
+      background: url('nen.jpg') no-repeat center/cover;
+      color:#fff;
+      line-height:1.6;
+    }
+
+    .overlay{
+      background:rgba(0,0,0,0.55);
+      min-height:100vh;
+      width:100%;
+      padding:40px 0;
+    }
+
+    .container{
+      max-width:1000px;
+      margin:auto;
+      padding:20px;
+    }
+
+    /* Header */
+    header{
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    /* ==== AVATAR 3D ==== */
+    .avatar-3d{
+      width:140px;
+      height:180px;
+      border:4px solid #b88a4a;
+      border-radius:10px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:0 0 25px rgba(0,0,0,0.55);
+      transition:0.3s ease;
+      transform-style:preserve-3d;
+      cursor:pointer;
+    }
+
+    .avatar-3d img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition:0.3s ease;
+    }
+
+    /* Hiệu ứng nghiêng khi hover */
+    .avatar-3d:hover{
+      transform:rotateY(12deg) rotateX(6deg) scale(1.06);
+      box-shadow:0 0 35px rgba(255,215,120,0.7);
+    }
+
+    .avatar-3d:hover img{
+      transform:scale(1.12);
+      filter:brightness(1.12);
+    }
+    /* =================== */
+
+    h1{
+      font-family:"Pirata One";
+      font-size:42px;
+      color:#ffdd73;
+      letter-spacing:2px;
+      text-shadow:0 0 8px rgba(0,0,0,1);
+    }
+
+    .subtitle{
+      opacity:0.95;
+      font-size:15px;
+      font-weight:600;
+      text-shadow:0 0 6px rgba(0,0,0,1);
+    }
+
+    nav{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .btn{
+      background:#ffdd73;
+      padding:8px 14px;
+      border-radius:8px;
+      color:#3b2f1f;
+      text-decoration:none;
+      border:2px solid #d7b15c;
+      font-weight:700;
+      transition:0.2s;
+    }
+
+    .btn:hover{
+      background:#ffe9a6;
+      transform:scale(1.05);
+    }
+
+    .primary{
+      background:#ffb400;
+      color:#402c00;
+    }
+
+    /* Main layout */
+    main{
+      margin-top:28px;
+      display:grid;
+      grid-template-columns:1fr 320px;
+      gap:24px;
+    }
+
+    /* TẤT CẢ CARD DÙNG phong.jpg */
+    .card{
+      background:url('phong.jpg') center/cover;
+      padding:20px;
+      border-radius:12px;
+      border:4px solid var(--rope);
+      color:var(--text-dark);
+      box-shadow:0 0 14px rgba(0,0,0,0.45);
+    }
+
+    .section-title{
+      font-family:"Pirata One";
+      font-size:28px;
+      margin-bottom:8px;
+      color:#2e1b00;
+      text-shadow:0 0 6px rgba(255,255,255,0.6);
+    }
+
+    .about p{
+      margin-bottom:10px;
+      font-weight:600;
+      color:#2b1a05;
+    }
+
+    .skills{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+
+    .chip{
+      background:#fff7d6;
+      padding:6px 10px;
+      border-radius:999px;
+      border:2px solid #c9a75a;
+      font-size:14px;
+      font-weight:600;
+      color:#3b2f1f;
+    }
+
+    .link{
+      color:#003a8c;
+      font-weight:700;
+      text-decoration:none;
+    }
+    .link:hover{ text-decoration:underline; }
+
+    footer{
+      text-align:center;
+      margin-top:25px;
+      color:#f7e7b1;
+    }
+
+    @media(max-width:900px){
+      main{grid-template-columns:1fr}
+      .avatar-3d{width:110px;height:150px}
+    }
+
+    /* Nút nhạc */
+    .music-btn{
+      background:#ffdd73;
+      border:3px solid #cfa142;
+      padding:6px 12px;
+      border-radius:8px;
+      font-weight:700;
+      color:#3b2f1f;
+      cursor:pointer;
+      transition:0.2s;
+      font-size:18px;
+    }
+
+    .music-btn:hover{
+      background:#ffe7a8;
+      transform:scale(1.07);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay">
+    <div class="container">
+
+      <header>
+        <!-- Avatar 3D -->
+        <div class="avatar-3d">
+          <img src="anh.jpg" alt="Avatar">
+        </div>
+
+        <div>
+          <h1 style="display:flex; align-items:center; gap:12px;">
+            Đỗ Đức Trí
+            <button id="musicBtn" class="music-btn">🎵 One Piece</button>
+          </h1>
+
+          <div class="subtitle">Duc Tri – One Piece </div>
+
+          <nav>
+            <a class="btn" href="#about">Giới thiệu</a>
+            <a class="btn" href="#skills">Kỹ năng</a>
+            <a class="btn" href="#contact">Liên hệ</a>
+            <a class="btn primary" href="https://web.facebook.com/duc.tri.777056" target="_blank">Website cá nhân</a>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section>
+          <div id="about" class="card about">
+            <div class="section-title">Giới thiệu</div>
+            <p>Xin chào — tôi là <strong>Đỗ Đức Trí</strong>, đam mê thể thao & lập trình.</p>
+            <p>Hiện tôi đang học tại trường PTDTNT ATK Sơn Dương.</p>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <div class="section-title">Mục tiêu</div>
+            <p>Đỗ đại học: Đại học Công Nghệ – Đại học Quốc gia Hà Nội.</p>
+          </div>
+        </section>
+
+        <aside>
+          <div id="skills" class="card">
+            <div class="section-title">Kỹ năng lập trình</div>
+            <div class="skills">
+              <span class="chip">HTML</span>
+              <span class="chip">C++</span>
+              <span class="chip">Python</span>
+            </div>
+          </div>
+
+          <div id="contact" class="card" style="margin-top:16px">
+            <div class="section-title">Liên hệ</div>
+            <p>Email: <a class="link" href="mailto:ductri735@gmail.com">ductri735@gmail.com</a></p>
+            <p>Điện thoại: <a class="link" href="tel:+84981375108">+84 981375108</a></p>
+            <p>TikTok: <a class="link" href="https://www.tiktok.com/@_trideptrailammmm156" target="_blank">Xem tại đây</a></p>
+            <p>Instagram: <a class="link" href="https://www.instagram.com/_ductriii_/" target="_blank">_ductriii_</a></p>
+          </div>
+        </aside>
+      </main>
+
+      <footer>
+        © <span id="year"></span> _ductri_ | One Piece Theme
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- NHẠC NỀN -->
+  <audio id="bgm" loop>
+    <source src="nhacnen.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const bgm = document.getElementById("bgm");
+    const btn = document.getElementById("musicBtn");
+    let isPlaying = false;
+
+    btn.addEventListener("click", () => {
+      if(isPlaying){
+        bgm.pause();
+        btn.textContent = "🎵 One Piece";
+        isPlaying = false;
+      } else {
+        bgm.play();
+        btn.textContent = "🎶 One Piece";
+        isPlaying = true;
+      }
+    });
+
+    /* Avatar 3D Follow Mouse */
+    const avatar = document.querySelector(".avatar-3d");
+
+    avatar.addEventListener("mousemove", (e) => {
+      const rect = avatar.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const rotateY = (x / rect.width - 0.5) * 20;
+      const rotateX = -(y / rect.height - 0.5) * 20;
+
+      avatar.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.06)`;
+    });
+
+    avatar.addEventListener("mouseleave", () => {
+      avatar.style.transform = "rotateY(0deg) rotateX(0deg) scale(1)";
+    });
+  </script>
+
+</body>
+</html>
